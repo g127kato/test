@@ -2,9 +2,9 @@
 #include <stdlib.h> //malloc関数,exit関数,free関数を使用している
 #include <math.h> //sqrt関数を使用している
 
-int myRoot(double x) // x の平方根を返す関数。x >= 0 ではないとき exit(1) とする。
+double myRoot(double x) // x の平方根を返す関数。x >= 0 ではないとき exit(1) とする。
 {
-  int y;
+  double y;
   if( x < 0 ){ //sqrt関数は0より小さい数はエラーとなる。
     exit(1);
   }
@@ -14,7 +14,7 @@ int myRoot(double x) // x の平方根を返す関数。x >= 0 ではないと�
 int main(void)
 {
   int i = 0; //ループに使う変数に0を入れていない
-  double *x = (double *)malloc(sizeof(double) * 100);
+  double *x = (double *)malloc(sizeof(double) * 101);
 
   while( i <= 100 ){
     x[i] = myRoot((double)i);
